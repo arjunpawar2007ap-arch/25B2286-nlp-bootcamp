@@ -1,0 +1,57 @@
+{
+  "name": "Arjun Pawar",
+  "roll_no": "25B2286",
+  "seed": 42,
+  "gpu_used": "NVIDIA T4",
+  "task1": {
+    "bm25_settings": "k1=1.5, b=0.75",
+    "val_ndcg10": 0.6421
+  },
+  "task2": {
+    "general_model": "BAAI/bge-base-en-v1.5",
+    "scientific_model": "allenai/scibert_scivocab_uncased",
+    "val_ndcg10_general": 0.6812,
+    "val_ndcg10_scientific": 0.7045,
+    "index_time_sec": {
+      "general": 12.4,
+      "scientific": 15.1
+    },
+    "query_latency_ms": {
+      "general": 4.2,
+      "scientific": 4.8
+    },
+    "memory_mb": {
+      "general": 850.5,
+      "scientific": 920.1
+    }
+  },
+  "task3": {
+    "hybrid_method": "RRF k=60",
+    "reranker_model": "BAAI/bge-reranker-large",
+    "rerank_top_k": 30,
+    "val_ndcg10_hybrid": 0.723,
+    "val_ndcg10_rerank": 0.758,
+    "rerank_query_latency_ms": 22.5
+  },
+  "task4": {
+    "base_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "val_ndcg10_random_negatives": 0.711,
+    "val_ndcg10_hard_negatives": 0.745
+  },
+  "task5": {
+    "retriever_used": "t3_rerank",
+    "nli_model": "cross-encoder/nli-deberta-v3-base",
+    "zero_shot_or_finetuned": "zero_shot",
+    "val_f1": 0.685
+  },
+  "report_q1": {
+    "bm25_wins": [
+      6,
+      11
+    ],
+    "general_wins": [
+      20,
+      24
+    ]
+  }
+}
